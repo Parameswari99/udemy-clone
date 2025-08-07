@@ -39,6 +39,8 @@ body{
     border: none;
     width: 100%;
     background-color: transparent;
+    width: 100%;
+    font-size: 16px;
 }
 
 .navbar__s2 input:focus{
@@ -46,9 +48,11 @@ body{
 }
 .navbar__s3{
     display: flex;
-    justify-content: space-between;
     gap: 10px;
     align-items: center;
+}
+.navbar__s4{
+    display: none;
 }
 /* my learning popup */
 .mylearning{
@@ -62,6 +66,7 @@ body{
     width: 100px;
     top: 150%;
     padding: 20px;
+    right: 0;
     display: none;
 }
 .mylearning:hover .mylearning__popup{
@@ -87,11 +92,8 @@ body{
     background-color:transparent;
     color: black;
     border: solid #A435f0 1px;
+
 }
-
-
-
-
 
 .sale-image{
     position: relative;
@@ -100,21 +102,20 @@ body{
 .sale-image img{
     width: 100%;
 }
-
-.instruction {
-  position: absolute;
-  background-color: #C259C5;
-  color: white;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-  width: 20%;
-  padding: 35px;
-  top: 35%;
-  left:10%;
-  border-radius: 10px;
-  animation-name: zoom;
-  animation-duration: 2s;
-  opacity: 0;
-  animation-fill-mode: forwards;
+.sale-image__offer{
+    width: 25%;
+    background-color:#C259C5;
+    color: white;
+    padding: 2%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    animation-name: zoom;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 @keyframes zoom{
@@ -134,16 +135,19 @@ body{
     padding: 10px;
 }
 
-.recommended__container{
+.container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 10px;
+    
 }
 
 .course-card{
-    width: 310px;
-    height: 350px;
+    flex-grow: 1;
+    flex-basis: 20%;
+    margin: 5px;
+    height: 370px;
 
 }
 .course-card img{
@@ -176,6 +180,18 @@ body{
     justify-content: space-between;
     margin-top: 10px;
 }
+.popular__course-card{
+    flex-grow: 1;
+    flex-basis: 20%;
+    margin: 5px;
+
+}
+.popular__course-card img{
+    width: 80%;
+    height: 35%;
+}
+
+
 .footer__one{
     display: flex;
     gap: 10px;
@@ -195,4 +211,26 @@ body{
     padding: 30px;
     background-color: black;
     color: white;
+}
+
+/* Media Queries */
+@media screen and (max-width:800px) {
+    body{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .course-card{
+        flex-basis: 40%;
+    }
+    .categories{
+        display: none;
+    }
+    .navbar__s2,.navbar__s3{
+        display: none;
+    }
+    .navbar__s4{
+        display: block;
+    }
 }
